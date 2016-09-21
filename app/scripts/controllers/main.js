@@ -8,6 +8,15 @@
  * Controller of the angularTablesApp
  */
 angular.module('angularTablesApp')
-  .controller('MainCtrl', function () {
-    
-  });
+  .controller('MainCtrl', ['$http','$scope', function ($http, $scope) {
+
+$scope.dataFromPlayer = [];
+$http.get('data/players.json').success(function(data){
+  $scope.dataFromPlayer = data;
+});
+
+
+
+
+
+  }]);
