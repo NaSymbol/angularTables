@@ -1,17 +1,46 @@
 <div>
-  <table class="table table-bordered table-hover table-striped">
-    <thead>
+  <style>
+  thead {
+   display: table;
+   width: 100%;     // Fill the containing table
+}
+tbody tr {
+   display: table;
+   width: 100%;     // Fill the containing table
+}
+thead {
+   table-layout: fixed;   // Same layout for all cells
+}
+tbody tr {
+   table-layout: fixed;   // Same layout for all cells
+}
+th, td {
+   width: auto;   // Same width for all cells, if table has fixed layout
+}
+
+  </style>
+  
+  <table style="display:block;" class="col-xs-7 table table-bordered table-hover table-striped">
+    <thead style="">
       <tr>
-        <th>andy</th>
-        <th>adfs</th>
-        <th>sfasd</th>
+        <th>name</th>
+        <th>age</th>
+        <th>email</th>
+        <th>score1</th>
+        <th>score2</th>
+        <th>score3</th>
+        <th>score4</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody style=" max-height: 40em;  overflow-y: auto;;display:block;">
       <tr ng-repeat="data in dataFromPlayer">
         <td>{{data.name}}</td>
-        <td>sdfsd</td>
-        <td>sfw2</td>
+        <td>{{data.age}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.score1}}</td>
+        <td>{{data.score2}}</td>
+        <td>{{data.score3}}</td>
+        <td>{{data.score4}}</td>
       </tr>
     </tbody>
 
